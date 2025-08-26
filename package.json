@@ -7,6 +7,7 @@
     "url": "https://github.com/karankurbur"
   },
   "dependencies": {
+    "@chainlink/contracts": "^1.4.0",
     "@openzeppelin/contracts": "^5.0.1"
   },
   "devDependencies": {

@@ -21,6 +21,12 @@
 
 [etherscan]
   mainnet = { key = "${API_KEY_ETHERSCAN}" }
+  arbitrum = { key = "${API_KEY_ARBISCAN}" }
+  polygon = { key = "${API_KEY_POLYGONSCAN}" }
+  optimism = { key = "${API_KEY_OPTIMISTIC_ETHERSCAN}" }
+  base = { key = "${API_KEY_BASESCAN}" }
+  avalanche = { key = "${API_KEY_SNOWTRACE}" }
+  sepolia = { key = "${API_KEY_ETHERSCAN}" }
 
 [fmt]
   bracket_spacing = true
@@ -43,3 +49,63 @@
   optimism = "https://optimism-rpc.publicnode.com"
   polygon = "https://polygon-bor-rpc.publicnode.com"
   sepolia = "https://ethereum-sepolia-rpc.publicnode.com"
+
+# Chainlink Price Feed Configurations
+# Note: These are custom configurations for our application
+[chainlink_price_feeds.mainnet]
+  ETH_USD = "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+  BTC_USD = "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+  LINK_USD = "0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c"
+  USDC_USD = "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"
+  USDT_USD = "0x3E7d1eAB13ad0104d2750B8863b489D65364e32D"
+  DAI_USD = "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9"
+  MATIC_USD = "0x7bAC85A8a13A4BcD8abb3eB7d6b4d632c5a57676"
+
+[chainlink_price_feeds.polygon]
+  ETH_USD = "0xF9680D99D6C9589e2a93a78A04A279e509205945"
+  BTC_USD = "0xc907E116054Ad103354f2D350FD2514433D57F6f"
+  LINK_USD = "0xd9FFdb71EbE7496cC440152d43986Aae0AB76665"
+  USDC_USD = "0xfE4A8cc5b5B2366C1B58Bea3858e81843581b2F7"
+  USDT_USD = "0x0A6513e40db6EB1b165753AD52E80663aeA50545"
+  MATIC_USD = "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0"
+
+[chainlink_price_feeds.arbitrum]
+  ETH_USD = "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612"
+  BTC_USD = "0x6ce185860a4963106506C203335A2910413708e9"
+  LINK_USD = "0x86E53CF1B870786351Da77A57575e79CB55812CB"
+  USDC_USD = "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3"
+  USDT_USD = "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7"
+
+[chainlink_price_feeds.optimism]
+  ETH_USD = "0x13e3Ee699D1909E989722E753853AE30b17e08c5"
+  BTC_USD = "0xD702DD976Fb76Fffc2D3963D037dfDae5b04E593"
+  LINK_USD = "0xCc232dcFAAE6354cE191Bd574108c1aD03f86450"
+  USDC_USD = "0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3"
+  USDT_USD = "0xECef79E109e997bCA29c1c0897ec9d7b03647F5E"
+
+[chainlink_price_feeds.base]
+  ETH_USD = "0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70"
+  BTC_USD = "0x56a43EB56Da12C0dc1D972ACb089c06a5dEF8e69"
+  LINK_USD = "0xb113F5A928BCfF189C998ab20d753a47F9dE5A61"
+  USDC_USD = "0x7e860098F58bBFC8648a4311b374B1D669a2bc6B"
+
+[chainlink_price_feeds.avalanche]
+  ETH_USD = "0x976B3D034E162d8bD72D6b9C989d545b839003b0"
+  BTC_USD = "0x2779D32d5166BAaa2B2b658333bA7e6Ec0C65743"
+  LINK_USD = "0x49ccd9ca821EfEab2b98c60dC60F518E765EDe9a"
+  USDC_USD = "0xF096872672F44d6EBA71458D74fe67F9a77a23B9"
+  USDT_USD = "0xEBE676ee90Fe1112671f19b6B7459bC678B67e8a"
+  AVAX_USD = "0x0A77230d17318075983913bC2145DB16C7366156"
+
+[chainlink_price_feeds.sepolia]
+  ETH_USD = "0x694AA1769357215DE4FAC081bf1f309aDC325306"
+  BTC_USD = "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
+  LINK_USD = "0xc59E3633BAAC79493d908e63626716e204A45EdF"
+
+# Chainlink Configuration
+[chainlink_config]
+  staleness_threshold = 3600  # 1 hour in seconds
+  deviation_threshold = 500   # 5% in basis points (500/10000)
+  heartbeat_interval = 300    # 5 minutes in seconds
+  min_answers = 1             # Minimum number of oracle responses
+  max_gas_price = 100_000_000_000  # 100 gwei in wei
